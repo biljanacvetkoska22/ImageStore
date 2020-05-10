@@ -1,0 +1,64 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Image Store: @ViewBag.Title</title> <!-- C# is referenced by the at sign -->
+
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container">        
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md  w-100">
+            <h1 class="navbar-brand"><i class="fa fa-paint-brush"></i>Welcome to Image Store</h1>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#theMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="theMenu" class="navbar-collapse collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="App" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="App" asp-action="Contact">Contact</a>
+                    </li> <!--usage defined in _ViewImports-->
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="App" asp-action="About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="App" asp-action="Shop">Shop</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="container">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        @RenderBody()
+    </section>
+    <section class="container">
+        <footer><div class="text-center">Copyright 2020 Biljana Cvetkoska LLC</div></footer>
+    </section>
+
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/index.js"></script>
+    @RenderSection("scripts", false) <!-- false means not required on every page-->
+</body>
+</html>

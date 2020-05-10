@@ -1,0 +1,3 @@
+ng build 
+ng serve 
+ng build --watch

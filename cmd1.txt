@@ -1,0 +1,3 @@
+ng new image-app --dryRun --skip-git --inline-template --inline-style --skip-tests
+
+//disable angular routing aaaaaaaaaaaaand :D css for styles --dryRun doesn't create anything

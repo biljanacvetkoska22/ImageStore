@@ -1,0 +1,19 @@
+﻿{
+  "Colors": {
+    "Favourite": "blue"
+  },
+  "ConnectionStrings": {
+    "ImageConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=ImageStoreDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "Tokens": {
+    "Key": "agerguho23u52ub3itb3ity3",
+    "Issuer": "localhost",
+    "Audience" :  "users"
+  }
+}
